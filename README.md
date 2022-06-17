@@ -21,7 +21,7 @@
 2. `cd .devcontainer`
 3. `docker-compose up -d`
 4. コンテナ構築後、以下のコマンドを入力
-   - `./script/run.sh`
+   - `./run.sh`
 5. ブラウザで[URL](http://localhost:18501/)を入力
 
 ## 4.ディレクトリ構成

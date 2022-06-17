@@ -1,0 +1,35 @@
+version: "3.5"
+services:
+  memo_server:
+    build: ..
+    container_name: memo_server
+    image: memo_server
+    env_file:
+      - dev.env
+    ports:
+      - 18000:8000
+      - 18501:8501
+    volumes:
+      - ../app:/opt/app
+    tty: true
+
+  postgres:
+    build:
+      context: ../database
+      args:
+        - DB_LANG=ja_JP
+    container_name: postgres
+    image: postgres
+    env_file:
+      - dev.env
+    volumes:
+      - ../database/initdb:/docker-entrypoint-initdb.d
+    networks:
+      - default
+    ports:
+      - 15432:5432
+    tty: true
+
+networks:
+  default:
+    name: memo_server_net

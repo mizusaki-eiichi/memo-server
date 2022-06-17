@@ -1,0 +1,7 @@
+autopep8
+black
+fastapi
+SQLAlchemy
+streamlit
+psycopg2-binary
+uvicorn
